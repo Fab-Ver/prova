@@ -5,7 +5,7 @@ public interface Controller {
 	void gameLoop();
 	
 	// aggiorna GUI
-	void render();
+	void render(Model gameState);
 	
 	// aggiorna il model
 	void update();

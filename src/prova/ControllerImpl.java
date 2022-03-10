@@ -6,12 +6,15 @@ import java.util.concurrent.BlockingQueue;
 import input.Command;
 import input.InputController;
 
+
 public class ControllerImpl implements Controller, InputController {
 	
 	private static final int QUEUE_CAPACITY = 70;
 	private Model model;
 	private GameView view;
 	private final BlockingQueue<Command> cmdQueue;
+	
+	
 
 	
 
@@ -26,13 +29,13 @@ public class ControllerImpl implements Controller, InputController {
 		while(!this.model.isGameOver()) {
 			processInput();
 			update();
-			render();
+			render(this.model);
 		}
 	}
 
 	@Override
-	public void render() {
-		this.view.render();
+	public void render(Model gameState) {
+		this.view.render(gameState);
 	}
 
 	@Override
