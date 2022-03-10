@@ -15,4 +15,8 @@ public class GameView extends JFrame {
 		this.setVisible(true);		
 	}
 	
+	public void render() {
+		
+	}
+	
 }

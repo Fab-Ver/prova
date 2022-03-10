@@ -1,15 +1,24 @@
 package prova;
 
-public class ControllerImpl implements Controller {
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
+
+import input.Command;
+import input.InputController;
+
+public class ControllerImpl implements Controller, InputController {
 	
+	private static final int QUEUE_CAPACITY = 70;
 	private Model model;
 	private GameView view;
+	private final BlockingQueue<Command> cmdQueue;
+
 	
 
 	public ControllerImpl(Model model, GameView view) {
-		super();
 		this.model = model;
 		this.view = view;
+		this.cmdQueue = new ArrayBlockingQueue<>(QUEUE_CAPACITY);
 	}
 
 	@Override
@@ -23,8 +32,7 @@ public class ControllerImpl implements Controller {
 
 	@Override
 	public void render() {
-		// TODO Auto-generated method stub
-		
+		this.view.render();
 	}
 
 	@Override
@@ -35,10 +43,17 @@ public class ControllerImpl implements Controller {
 
 	@Override
 	public void processInput() {
-		// TODO Auto-generated method stub
-		
+		final Command cmd = this.cmdQueue.poll();
+		if (cmd != null) {
+			cmd.execute(this.model);
+		}
 	}
 
+	@Override
+	public void notifyCommand(Command cmd) {
+		this.cmdQueue.add(cmd);
+	}
+	
 	@Override
 	public void run() {
 		this.view.run();

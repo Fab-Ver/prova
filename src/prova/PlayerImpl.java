@@ -25,12 +25,12 @@ public class PlayerImpl implements Player {
 	}
 
 	@Override
-	public void moveUp(int movementDelta) {
+	public void moveUp(double movementDelta) {
 		this.posY += movementDelta;
 	}
 
 	@Override
-	public void moveDown(int movementDelta) {
+	public void moveDown(double movementDelta) {
 		this.posY -= movementDelta;
 	}
 	
