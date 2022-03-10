@@ -1,4 +1,4 @@
-package prova;
+package model;
 
 public interface Player {
 	

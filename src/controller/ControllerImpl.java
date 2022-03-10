@@ -1,10 +1,12 @@
-package prova;
+package controller;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
 import input.Command;
 import input.InputController;
+import model.Model;
+import view.GameView;
 
 
 public class ControllerImpl implements Controller, InputController {

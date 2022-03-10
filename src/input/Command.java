@@ -1,6 +1,6 @@
 package input;
 
-import prova.Model;
+import model.Model;
 
 public interface Command {
 	

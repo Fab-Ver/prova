@@ -1,7 +1,7 @@
 package input;
 
-import prova.Model;
-import prova.Player;
+import model.Model;
+import model.Player;
 
 public class Up implements Command {
 	
@@ -11,7 +11,7 @@ public class Up implements Command {
 	
 
 	public Up() {
-		this.movement = this.MOVEMENT_DELTA;
+		this.movement = MOVEMENT_DELTA;
 	}
 
 

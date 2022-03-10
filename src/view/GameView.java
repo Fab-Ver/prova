@@ -1,6 +1,9 @@
-package prova;
+package view;
 
 import javax.swing.*;
+
+import model.Model;
+
 import java.awt.*;
 
 public class GameView extends JFrame {
