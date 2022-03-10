@@ -2,8 +2,11 @@ package prova;
 
 public interface Player {
 	
-	void up();
+	void moveUp(int movementDelta);
 
-	void down();
+	void moveDown(int movementDelta);
 	
+	int getPosX();
+	
+	int getPosY(); 
 }
