@@ -3,8 +3,9 @@ package prova;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		Controller controller = new ControllerImpl(new ModelImpl(), new GameView());
 		
+		controller.run();
 	}
 
 }

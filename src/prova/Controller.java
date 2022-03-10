@@ -11,5 +11,7 @@ public interface Controller {
 	void update();
 	
 	void processInput();
+	
+	void run();
 
 }

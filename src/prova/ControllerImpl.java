@@ -3,7 +3,14 @@ package prova;
 public class ControllerImpl implements Controller {
 	
 	private Model model;
-	//private View view;
+	private GameView view;
+	
+
+	public ControllerImpl(Model model, GameView view) {
+		super();
+		this.model = model;
+		this.view = view;
+	}
 
 	@Override
 	public void gameLoop() {
@@ -30,6 +37,11 @@ public class ControllerImpl implements Controller {
 	public void processInput() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public void run() {
+		this.view.run();
 	}
 
 }
